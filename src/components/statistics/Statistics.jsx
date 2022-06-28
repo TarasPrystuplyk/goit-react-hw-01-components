@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 export default function Statistics({ title, stats }) {
-    const isTitle = { title };
+    
     return (
       <section class="statistics">
   <h2 class="title">Upload stats</h2>
