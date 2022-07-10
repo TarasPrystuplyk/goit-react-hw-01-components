@@ -37,7 +37,7 @@ export const Name = styled.p`
 
 export const TagName = styled.p`
   font-weight: ${p => p.theme.fontWeights.bold};
-  font-size: ${p => p.theme.fontSizes.m};
+  font-size: ${p => p.theme.fontSizes.l};
   line-height: ${p => p.theme.lineHeights.body};
   color: ${p => p.theme.colors.accentText};
   margin-top: ${p => p.theme.space[3]}px;
@@ -50,7 +50,7 @@ export const TagName = styled.p`
 
 export const Location = styled.p`
   font-weight: ${p => p.theme.fontWeights.bold};
-  font-size: ${p => p.theme.fontSizes.m};
+  font-size: ${p => p.theme.fontSizes.l};
   line-height: ${p => p.theme.lineHeights.body};
   color: ${p => p.theme.colors.accentText};
   margin-top: ${p => p.theme.space[3]}px;

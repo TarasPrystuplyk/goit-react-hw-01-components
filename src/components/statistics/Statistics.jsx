@@ -1,34 +1,48 @@
 import PropTypes from "prop-types";
 
-export default function Statistics({ title, stats }) {
-    
-    return (
-      <section class="statistics">
-  <h2 class="title">Upload stats</h2>
+import {
+  StatisticsContainer,
+  Info,
+  Title,
+  StatisticsList,
+  Item,
+  Label, 
+  Percentage
+} from './StatisticsStyled';
 
-  <ul class="stat-list">
-    <li class="item">
-      <span class="label">.docx</span>
-      <span class="percentage">4%</span>
-    </li>
-    <li class="item">
-      <span class="label">.mp3</span>
-      <span class="percentage">14%</span>
-    </li>
-    <li class="item">
-      <span class="label">.pdf</span>
-      <span class="percentage">41%</span>
-    </li>
-    <li class="item">
-      <span class="label">.mp4</span>
-      <span class="percentage">12%</span>
-    </li>
-  </ul>
-</section>
+export default function Statistics({ title, stats }) {
+  const isTitle = { title };
+  return (
+    <StatisticsContainer>
+      <Info>
+        <Title>{isTitle && title}</Title>
+        <StatisticsList>
+          {stats.map(stat => (
+            <Item key={stat.id}>
+              <StatisticsItem label={stat.label} percentage={stat.percentage} />
+            </Item>
+          ))}
+        </StatisticsList>
+      </Info>
+    </StatisticsContainer>
+  );
+  function StatisticsItem({ label, percentage }) {
+    return (
+      <>
+        <Label>{label}</Label>
+        <Percentage>{percentage}%</Percentage>
+      </>
     );
   }
   
+}
+
+
+  
   Statistics.propTypes = {
-    title: PropTypes.string,
+    title: PropTypes.string.isRequired,
     stats: PropTypes.array.isRequired,
+    label: PropTypes.string.isRequired,
+    percentage: PropTypes.number.isRequired,
   };
+

@@ -6,8 +6,8 @@ export const theme = {
       background: '#fff',
       primary: '#07c',
       avatar: '#05a',
-      accent: '#584',
-      accentText: 'red',
+      accent: '#D2691E',
+      accentText: '#FF0000',
     },
     space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
     fonts: {
@@ -19,8 +19,10 @@ export const theme = {
       xs: '12px',
       s: '14px',
       m: '16px',
+      ml: '22px',
       l: '32px',
       xl: '64px',
+
     },
     fontWeights: {
       normal: 400,
