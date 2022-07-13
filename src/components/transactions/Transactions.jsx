@@ -14,14 +14,17 @@ export default function TransactionHistory({ items }) {
       </TableHead>
 
       <tbody>
-        {items.map(item => (
-          <TransactionItem
-            key={item.id}
-            type={item.type}
-            amount={item.amount}
-            currency={item.currency}
-          />
-        ))}
+        {items.map( item => {
+          const { type, amount, currency, id } = item;
+          return (
+            <TransactionItem
+            key={id}
+            type={type}
+            amount={amount}
+            currency={currency}
+            />
+          );
+        })}
       </tbody>
     </Table>
   );

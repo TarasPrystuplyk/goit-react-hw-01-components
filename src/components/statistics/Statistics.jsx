@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import StatisticsItem from './StatisticsItem';
 
 import {
   StatisticsContainer,
@@ -6,8 +7,6 @@ import {
   Title,
   StatisticsList,
   Item,
-  Label, 
-  Percentage
 } from './StatisticsStyled';
 
 export default function Statistics({ title, stats }) {
@@ -15,7 +14,7 @@ export default function Statistics({ title, stats }) {
   return (
     <StatisticsContainer>
       <Info>
-        <Title>{isTitle && title}</Title>
+      {isTitle && <Title>{title}</Title>}
         <StatisticsList>
           {stats.map(stat => (
             <Item key={stat.id}>
@@ -26,14 +25,6 @@ export default function Statistics({ title, stats }) {
       </Info>
     </StatisticsContainer>
   );
-  function StatisticsItem({ label, percentage }) {
-    return (
-      <>
-        <Label>{label}</Label>
-        <Percentage>{percentage}%</Percentage>
-      </>
-    );
-  }
   
 }
 
@@ -42,7 +33,6 @@ export default function Statistics({ title, stats }) {
   Statistics.propTypes = {
     title: PropTypes.string.isRequired,
     stats: PropTypes.array.isRequired,
-    label: PropTypes.string.isRequired,
-    percentage: PropTypes.number.isRequired,
+  
   };
 
